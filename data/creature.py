@@ -23,7 +23,7 @@ def get_one(name:str) -> Creature:
     curs.execute(qry, params)
     return row_to_model(curs.fetchone())
 
-def get_all(name : str) ->list[Creature]:
+def get_all() ->list[Creature]:
     qry = "select * from creature"
     curs.execute(qry)
     return [row_to_model(row) for row in curs.fetchall()]
